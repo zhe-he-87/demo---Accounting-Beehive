@@ -1,0 +1,102 @@
+:root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --text: #e6edf3;
+    --muted: #9da7b3;
+    --accent: #2f81f7;
+    --good: #2ea043;
+    --bad: #f85149;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+header {
+    margin-bottom: 16px;
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+}
+
+header p { color: var(--muted); margin: 0; }
+
+.ticker-input, .game {
+    background: var(--panel);
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.ticker-input label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+.input-row { display: flex; gap: 8px; }
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background: #0b0f14;
+    color: var(--text);
+}
+
+button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+}
+
+button.secondary { background: transparent; color: var(--text); }
+
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.status { margin-top: 8px; min-height: 22px; color: var(--muted); }
+
+.hud {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px 12px;
+    margin-bottom: 12px;
+}
+
+.chart-wrap {
+    background: #0b0f14;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.round-result { margin-top: 8px; min-height: 22px; }
+
+footer { color: var(--muted); margin-top: 24px; text-align: center; }
+

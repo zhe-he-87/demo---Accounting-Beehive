@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stock Prediction Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stock Market Prediction Game</h1>
+            <p>Pick a ticker, then guess whether the next day's price goes up or down.</p>
+        </header>
+
+        <section class="ticker-input">
+            <label for="ticker">Enter Stock Ticker</label>
+            <div class="input-row">
+                <input id="ticker" type="text" placeholder="e.g., MSFT, AAPL, COF" autocomplete="off" />
+                <button id="loadBtn">Load</button>
+            </div>
+            <div id="status" class="status" aria-live="polite"></div>
+        </section>
+
+        <section id="gameSection" class="game" hidden>
+            <div class="hud">
+                <div><strong>Ticker:</strong> <span id="hudTicker">—</span></div>
+                <div><strong>Current date:</strong> <span id="hudDate">—</span></div>
+                <div><strong>Current close:</strong> $<span id="hudClose">—</span></div>
+                <div><strong>Score:</strong> <span id="hudScore">0</span></div>
+            </div>
+
+            <div class="chart-wrap">
+                <canvas id="chart" height="200"></canvas>
+            </div>
+
+            <div class="controls">
+                <button id="guessUp" disabled>Up ▲</button>
+                <button id="guessDown" disabled>Down ▼</button>
+                <button id="stopBtn" class="secondary" disabled>Stop</button>
+            </div>
+            <div id="roundResult" class="round-result" aria-live="polite"></div>
+        </section>
+
+        <footer>
+            <p>Data provided by Alpha Vantage.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script defer src="./app.js"></script>
+</body>
+</html>
+
